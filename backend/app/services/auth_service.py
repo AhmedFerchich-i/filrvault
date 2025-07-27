@@ -2,11 +2,11 @@
 
 from fastapi import HTTPException, status
 from sqlalchemy.orm import Session
-from app.utils.security import verify_password
-from app.utils.jwt import create_access_token, create_refresh_token, decode_token
-from app.schemas.auth import Token, TokenPayload
-from app.models.user import User
-from app.services.user_service import get_user_by_email
+from utils.security import verify_password
+from utils.jwt import create_access_token, create_refresh_token, decode_token
+from schemas.auth import Token, TokenPayload
+from models.user import User
+from services.user_service import get_user_by_email
 from jose import JWTError
 
 def authenticate_user(email: str, password: str, db: Session) -> Token:
